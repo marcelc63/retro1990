@@ -75,23 +75,45 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="app-bg">
+        <img src="/images/image1.jpeg" className="app-bg--image1" alt="" />
+        <img src="/images/image2.jpeg" className="app-bg--image2" alt="" />
+        <img src="/images/image3.jpeg" className="app-bg--image3" alt="" />
+        <img src="/images/image4.png" className="app-bg--image4" alt="" />
+      </div>
       <div className="container">
-        <div className="header-container">
-          <p className="header">🎞 Retro 1990</p>
-          <p className="sub-text">
-            300 Retro PFP inspired from the 1990s fashion style
-          </p>
-          {!walletAddress && renderNotConnectedContainer()}
+        <div className="container--inner">
+          <div className="header-container">
+            <p className="header">🎞 Retro 1990</p>
+            <p className="sub-text">
+              300 Retro PFP inspired from the 1990s fashion style in Asia
+            </p>
+            {!walletAddress && renderNotConnectedContainer()}
+          </div>
         </div>
+
         {walletAddress && <CandyMachine walletAddress={window.solana} />}
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
+
+        <div className="container--inner">
+          Created by{" "}
           <a
-            className="footer-text"
-            href={TWITTER_LINK}
+            className="sub-text"
+            href={`https://twitter.com/marcelc63`}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >
+            @marcelc63
+          </a>{" "}
+          for a{" "}
+          <a
+            className="sub-text"
+            href={`@_buildspace`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            @_buildspace
+          </a>{" "}
+          Solana NFT project
         </div>
       </div>
     </div>

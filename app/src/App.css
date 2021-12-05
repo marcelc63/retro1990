@@ -1,20 +1,66 @@
 .App {
   height: 100vh;
-  background-color: rgb(20, 20, 20);
+  /* background-color: rgb(20, 20, 20); */
+  background: #f5f5dc;
   overflow: scroll;
   text-align: center;
   overflow: hidden;
 }
 
+.app-bg {
+  position: absolute;
+  height: 100vh;
+  z-index: 100;
+  width: 100%;
+}
+.app-bg--image1 {
+  position: absolute;
+  top: 20px;
+  right: 600px;
+  width: 300px;
+}
+.app-bg--image2 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 400px;
+}
+.app-bg--image3 {
+  position: absolute;
+  bottom: 20px;
+  right: 150px;
+  width: 300px;
+}
+.app-bg--image4 {
+  position: absolute;
+  bottom: 100px;
+  right: 350px;
+  width: 350px;
+}
+
 .container {
+  position: absolute;
+  overflow-y: scroll;
+  width: 100%;
+  z-index: 200;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 30px 0 30px;
-  color: white;
+  padding: 30px;
+  color: #222222;
   position: relative;
+
   /* background-color: #35aee2; */
+}
+
+.container--inner {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
 }
 
 .authed-container {
@@ -35,7 +81,13 @@
 }
 
 .sub-text {
-  font-size: 25px;
+  font-size: 16px;
+  color: #987456;
+  font-weight: bold;
+}
+
+.loading-text {
+  color: #987456;
 }
 
 .gradient-text {
@@ -58,17 +110,23 @@
 }
 
 .connect-wallet-button {
-  color: white;
-  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  background: #f0ead6;
   background-size: 200% 200%;
-  animation: gradient-animation 4s ease infinite;
+  color: #987456;
 }
 
 .mint-button {
-  background: -webkit-linear-gradient(left, #4e44ce, #35aee2);
+  background: #f0ead6;
   background-size: 200% 200%;
-  animation: gradient-animation 4s ease infinite;
-  margin-left: 10px;
+  color: #987456;
+}
+
+.mint-title {
+  color: #987456;
+  font-weight: bold;
+}
+.mint-text {
+  color: #987456;
 }
 
 .footer-container {
@@ -93,7 +151,7 @@
   color: white;
 }
 
-.connected-container input[type='text'] {
+.connected-container input[type="text"] {
   display: inline-block;
   padding: 10px;
   width: 50%;

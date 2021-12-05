@@ -366,42 +366,32 @@ const CandyMachine = ({ walletAddress }) => {
     </div>
   );
 
-  // Create render function
-  const renderDropTimer = () => {
-    // Get the current date and dropDate in a JavaScript Date object
-    const currentDate = new Date();
-    const dropDate = new Date(machineStats.goLiveData * 1000);
-
-    // If currentDate is before dropDate, render our Countdown component
-    if (currentDate < dropDate) {
-      console.log("Before drop date!");
-      // Don't forget to pass over your dropDate!
-      return <CountdownTimer dropDate={dropDate} />;
-    }
-
-    // Else let's just return the current drop date
-    return <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>;
-  };
-
   return (
     machineStats && (
       <div className="machine-container">
-        {renderDropTimer()}
-        <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
-        {machineStats.itemsRedeemed === machineStats.itemsAvailable && (
-          <p className="sub-text">Sold Out 🙊</p>
-        )}
-        {machineStats.itemsRedeemed < machineStats.itemsAvailable && (
-          <button
-            className="cta-button mint-button"
-            onClick={mintToken}
-            disabled={isMinting}
-          >
-            Mint NFT
-          </button>
-        )}
-        {isLoadingMints && <p>LOADING MINTS...</p>}
-        {mints.length > 0 && renderMintedItems()}
+        <div className="container--inner">
+          <p className="mint-title">Mint only via Devnet. Cost 0.2 SOL!</p>
+          {machineStats.itemsRedeemed === machineStats.itemsAvailable && (
+            <p className="sub-text">Sold Out 🙊</p>
+          )}
+          {machineStats.itemsRedeemed < machineStats.itemsAvailable && (
+            <button
+              className="cta-button mint-button"
+              onClick={mintToken}
+              disabled={isMinting}
+            >
+              {isMinting ? "Minting..." : "Mint"}
+            </button>
+          )}
+          <p className="mint-text">
+            {`${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}{" "}
+            minted
+          </p>
+        </div>
+        <div className="container--inner">
+          {isLoadingMints && <p className="loading-text">loading mints...</p>}
+          {mints.length > 0 && renderMintedItems()}
+        </div>
       </div>
     )
   );
