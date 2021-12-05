@@ -10,7 +10,6 @@ import {
   TOKEN_METADATA_PROGRAM_ID,
   SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
 } from "./helpers";
-import CountdownTimer from "../CountdownTimer";
 
 const {
   metadata: { Metadata, MetadataProgram },
@@ -351,6 +350,7 @@ const CandyMachine = ({ walletAddress }) => {
 
   useEffect(() => {
     getCandyMachineState();
+    // eslint-disable-next-line
   }, []);
 
   const renderMintedItems = () => (
