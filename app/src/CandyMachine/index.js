@@ -371,9 +371,9 @@ const CandyMachine = ({ walletAddress }) => {
       <div className="machine-container">
         <div className="container--inner">
           <p className="mint-title">
-            In a turn of events, I mistakenly withdrawn the Candy Machine rent
-            balance so minting now stops working lol! I guess there will only be
-            92 Retros on the devnet. Follow me on Twitter{" "}
+            In a turn of events, I mistakenly withdrew the Candy Machine rent
+            balance, so minting now stops working! I guess there will only be 92
+            Retros on the devnet. Follow me on Twitter{" "}
             <a
               className="sub-text"
               href={`https://twitter.com/marcelc63`}
