@@ -370,18 +370,32 @@ const CandyMachine = ({ walletAddress }) => {
     machineStats && (
       <div className="machine-container">
         <div className="container--inner">
-          <p className="mint-title">Mint only via Devnet. Cost 0.2 SOL!</p>
+          <p className="mint-title">
+            In a turn of events, I mistakenly withdrawn the Candy Machine rent
+            balance so minting now stops working lol! I guess there will only be
+            92 Retros on the devnet. Follow me on Twitter{" "}
+            <a
+              className="sub-text"
+              href={`https://twitter.com/marcelc63`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              @marcelc63
+            </a>{" "}
+            for what's next ;)
+          </p>
           {machineStats.itemsRedeemed === machineStats.itemsAvailable && (
             <p className="sub-text">Sold Out 🙊</p>
           )}
           {machineStats.itemsRedeemed < machineStats.itemsAvailable && (
-            <button
-              className="cta-button mint-button"
-              onClick={mintToken}
-              disabled={isMinting}
-            >
-              {isMinting ? "Minting..." : "Mint"}
-            </button>
+            <p className="sub-text">Sold Out 🙊</p>
+            // <button
+            //   className="cta-button mint-button"
+            //   onClick={mintToken}
+            //   disabled={isMinting}
+            // >
+            //   {isMinting ? "Minting..." : "Mint"}
+            // </button>
           )}
           <p className="mint-text">
             {`${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}{" "}
